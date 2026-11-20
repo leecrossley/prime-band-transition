@@ -1,22 +1,22 @@
 # The transition in a family of weighted prime sums
 
-There is a unique $b_*\in(1,2)$ at which the difference between the prime-square drift and the total absolute zero contribution vanishes. It satisfies
+There is a unique $b_\ast\in(1,2)$ at which the difference between the prime-square drift and the total absolute zero contribution vanishes. It satisfies
 
-$$1.50342897722316 < b_* < 1.50342897722317.$$
+$$1.50342897722316 < b_\ast < 1.50342897722317.$$
 
-For every fixed $b>b_*$, the Riemann hypothesis implies $D_b(y)>0$ for all sufficiently large $y$. For every fixed $1<b<b_*$, assume also that the distinct positive ordinates of the nontrivial zeta zeros are linearly independent over the rationals. Then both signs of $D_b(y)$ occur arbitrarily far out. At $b=b_*$ the normalized liminf is zero under both hypotheses. The eventual sign at equality remains open here.
+For every fixed $b>b_\ast$, the Riemann hypothesis implies $D_b(y)>0$ for all sufficiently large $y$. For every fixed $1<b<b_\ast$, assume also that the distinct positive ordinates of the nontrivial zeta zeros are linearly independent over the rationals. Then both signs of $D_b(y)$ occur arbitrarily far out. At $b=b_\ast$ the normalized liminf is zero under both hypotheses. The eventual sign at equality remains open here.
 
 For $b>1$ and $y>0$, let
 
 $$
 W_b(t)=
 \begin{cases}
- b(1-1/t),&1<t\le b,\\
- b^2/t-1,&b<t<b^2,\\
+ b(1-1/t),&1 < t\le b,\\
+ b^2/t-1,&b < t < b^2,\\
  0,&\text{otherwise},
 \end{cases}
 \qquad
-D_b(y)=b(b-1)y\log b-\sum_{p\ {\rm prime}}\log p\,W_b(p/y).
+D_b(y)=b(b-1)y\log b-\sum_{p\ {\rm prime}}\log p\thinspace W_b(p/y).
 $$
 
 ## Derivation
