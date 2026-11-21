@@ -2,6 +2,8 @@
 
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.24410825.svg)](https://doi.org/10.5281/zenodo.24410825)
 
+This result is now maintained in [prime-window-all-widths](https://github.com/leecrossley/prime-window-all-widths/tree/main/results/prime-band-transition). This repository is archived and keeps its releases and DOI.
+
 Under the hypotheses stated below, weighted sums of primes over the window from $y$ to $b^2y$ behave in two different ways depending on the dilation $b$. This repository finds the single value where the behaviour switches, $b_\ast\approx1.50342897722316$, and encloses it rigorously to 14 decimal places.
 
 Above $b_\ast$, the Riemann hypothesis (RH) implies that the primes fall short of the prediction at all sufficiently large $y$. Below it, RH together with rational linear independence of the distinct positive ordinates of the nontrivial zeta zeros implies that both signs keep occurring. The threshold marks where the one-sided bias of the wider windows begins.
