@@ -37,7 +37,7 @@ $$
 4. Certified opposite signs of $F$ at the two ends of the displayed bracket locate that zero.
 5. For $b\ge2$ a coefficient bound gives $B_b-L_b>0$ directly.
 
-The derivation is in [PROOF.md](PROOF.md). The series, drift and phase argument behind step 1 are in [prime-band-extrema](https://github.com/leecrossley/prime-band-extrema/tree/v1.0.0).
+The derivation is in [PROOF.md](PROOF.md). The series, drift and phase argument behind step 1 are in [prime-band-extrema](https://github.com/leecrossley/prime-band-extrema/tree/v1.0.1).
 
 ## Prior work and scope
 
