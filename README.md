@@ -16,7 +16,7 @@ $$1.50342897722316 < b_\ast < 1.50342897722317.$$
 |---|---|
 | $b>b_\ast$ | Under RH, $D_b(y)>0$ for all sufficiently large $y$. |
 | $1<b<b_\ast$ | Under RH and rational linear independence of the distinct positive ordinates of the nontrivial zeta zeros, both signs occur arbitrarily far out. |
-| $b=b_\ast$ | The normalized liminf is zero under both hypotheses. The eventual sign remains open here. |
+| $b=b_\ast$ | Under RH, $D_b(y)>0$ for every real $y>0$. With the independence hypothesis the normalised liminf is zero. [Critical-width proof](https://github.com/leecrossley/prime-band-critical-all-scales/blob/99f0a80a6f332a43942344c470ab410eba0eb2f7/README.md) |
 
 For $b>1$ and $y>0$, let
 
@@ -35,7 +35,7 @@ The prime-square drift is $B_b=2\sqrt b(\sqrt b-1)^2$ and the total absolute zer
 
 ## How the proof goes
 
-1. Each row of the table follows, under the hypotheses stated in it, from the sign of $B_b-L_b$, the prime-square drift minus the total absolute zero contribution: positive, negative or zero.
+1. The sign of $B_b-L_b$ gives the asymptotic bounds in the table. Strict positivity at equality uses the later critical-width proof linked in that row.
 2. For $1<b\le2$ the quotient $F(b)=(B_b-L_b)/\sqrt b$ has a closed form in logarithms, Euler's constant and $\pi$.
 3. Calculus shows that $F$ decreases from 0 to a strict minimum and then strictly increases, so it has at most one zero in $(1,2)$.
 4. Certified opposite signs of $F$ at the two ends of the displayed bracket show that this zero exists and lies in the bracket.
