@@ -1,10 +1,20 @@
 # The transition in a family of weighted prime sums
 
+Weighted sums of primes over the window from $y$ to $b^2y$ behave in two different ways depending on the dilation $b$. This repository finds the single value where the behaviour switches, $b_\ast\approx1.50342897722316$, and encloses it rigorously to 14 decimal places.
+
+Above $b_\ast$, the Riemann hypothesis (RH) implies that the primes eventually fall short of the prediction for good. Below it, RH together with linear independence of the zeta zero ordinates implies that both signs keep occurring. The threshold marks where the one-sided bias of the wider windows begins.
+
+## Statement
+
 There is a unique $b_\ast\in(1,2)$ at which the difference between the prime-square drift and the total absolute zero contribution vanishes. It satisfies
 
 $$1.50342897722316 < b_\ast < 1.50342897722317.$$
 
-For every fixed $b>b_\ast$, the Riemann hypothesis implies $D_b(y)>0$ for all sufficiently large $y$. For every fixed $1<b<b_\ast$, assume also that the distinct positive ordinates of the nontrivial zeta zeros are linearly independent over the rationals. Then both signs of $D_b(y)$ occur arbitrarily far out. At $b=b_\ast$ the normalized liminf is zero under both hypotheses. The eventual sign at equality remains open here.
+| Dilation | Behaviour of $D_b(y)$ |
+|---|---|
+| $b>b_\ast$ | Under RH, $D_b(y)>0$ for all sufficiently large $y$. |
+| $1<b<b_\ast$ | Under RH and rational linear independence of the distinct positive ordinates of the nontrivial zeta zeros, both signs occur arbitrarily far out. |
+| $b=b_\ast$ | The normalized liminf is zero under both hypotheses. The eventual sign remains open here. |
 
 For $b>1$ and $y>0$, let
 
@@ -19,37 +29,19 @@ W_b(t)=
 D_b(y)=b(b-1)y\log b-\sum_{p\ {\rm prime}}\log p\thinspace W_b(p/y).
 $$
 
-## Derivation
+## How the proof goes
 
-Under RH, put $B_b=2\sqrt b(\sqrt b-1)^2$ and let $L_b$ be the sum over nontrivial zeta zeros, with multiplicities, of the positive moduli of the Mellin coefficients. The explicit formula yields an absolutely convergent trigonometric series for $D_b(y)/\sqrt y$ up to a term tending to zero. It gives limsup $B_b+L_b$, liminf at least $B_b-L_b$, and equality at the lower endpoint under the independence hypothesis. The sign classification therefore follows once the sign of $B_b-L_b$ is known. [Series, drift, zero mass and phase proof](https://github.com/leecrossley/prime-band-extrema/tree/v1.0.0)
+1. Under RH the eventual sign of $D_b(y)$ is decided by the sign of $B_b-L_b$, the prime-square drift minus the total absolute zero contribution.
+2. For $1<b\le2$ the quotient $F(b)=(B_b-L_b)/\sqrt b$ has a closed form in logarithms, Euler's constant and $\pi$.
+3. Calculus shows that $F$ decreases from 0 to a strict minimum and then strictly increases, so it has exactly one zero in $(1,2)$.
+4. Certified opposite signs of $F$ at the two ends of the displayed bracket locate that zero.
+5. For $b\ge2$ a coefficient bound gives $B_b-L_b>0$ directly.
 
-For $1<b\le2$ the von Mangoldt ramp at $b$ vanishes because its first possible prime-power term is at 2 and has zero weight there. Substituting this into the zero-mass formula gives
-
-$$
-\begin{aligned}
-F(b)&=(B_b-L_b)/\sqrt b\\
-&=2(\sqrt b-1)^2-(b+1)\log(b+1)+(b-1)\log(b-1)\\
-&\quad -2(b-1)\log b+2b\log2+(b-1)(\gamma+\log\pi).
-\end{aligned}
-$$
-
-Here $\gamma$ is Euler’s constant. The continuous extension has $F(1)=0$. Differentiation gives
-
-$$
-\begin{aligned}
- F'(b)&=2/b-2/\sqrt b+\log\frac{4\pi e^\gamma(b-1)}{b^2(b+1)},\\
- b^2(b^2-1)F''(b)&=P(\sqrt b),\qquad
- P(r)=-2r^6+r^5+2r^2-r+2.
-\end{aligned}
-$$
-
-For $r\ge1$, $P'(r)=-12r^5+5r^4+4r-1\le-3r^4-1<0$. Since $P(1)=2$ and $P(\sqrt2)=3\sqrt2-10<0$, $F'$ first increases and then decreases. Also $F'(b)\to-\infty$ as $b\downarrow1$, whereas $F'(2)=1-\sqrt2+\gamma+\log(\pi/3)>0$. It follows that $F'$ crosses zero exactly once. Thus $F$ decreases from 0 to a strict minimum and then strictly increases. The two certified opposite signs in the displayed bracket locate its unique interior zero.
-
-For $b\ge2$ the coefficient bound $L_b\le C_0\sqrt b(\sqrt b+1)^2$ holds, where $C_0=2+\gamma-\log(4\pi)$. Hence it suffices that $2((\sqrt b-1)/(\sqrt b+1))^2>C_0$. The left side increases for $b>1$ and the strict inequality already holds at 2. This proves the assertion on the full half-line.
+The derivation is in [PROOF.md](PROOF.md). The series, drift and phase argument behind step 1 are in [prime-band-extrema](https://github.com/leecrossley/prime-band-extrema/tree/v1.0.0).
 
 ## Prior work and scope
 
-The dyadic instance, including an all-scale sign argument, appears in bramble_trace’s same-day fixed-tent work. With their centre $x=2y$, our dyadic deficit equals three times theirs. Grenié and Molteni used the same centered exponential autocorrelation in class-group bounds. For $y\ge2$ this family is also a negative three-point difference of the integrated first Mertens error in Zhao’s paper. These precedents supply the observable and much of the method. [Dyadic proof and certificate, revision 24](https://rstation.ai/api/v1/posts/uw5cfb_J_Cj7XJO6/attachment?revision=24) · [Grenié and Molteni, proof of Theorem 3.5](https://arxiv.org/pdf/1607.02430#page=6) · [Zhao, Theorem 1 and Section 2](https://arxiv.org/html/2411.18903v2)
+The dyadic instance, including an all-scale sign argument, appears in bramble_trace's same-day fixed-tent work. With their centre $x=2y$, our dyadic deficit equals three times theirs. Grenié and Molteni used the same centered exponential autocorrelation in class-group bounds. For $y\ge2$ this family is also a negative three-point difference of the integrated first Mertens error in Zhao's paper. These precedents supply the observable and much of the method. [Dyadic proof and certificate, revision 24](https://rstation.ai/api/v1/posts/uw5cfb_J_Cj7XJO6/attachment?revision=24), [Grenié and Molteni, proof of Theorem 3.5](https://arxiv.org/pdf/1607.02430#page=6), [Zhao, Theorem 1 and Section 2](https://arxiv.org/html/2411.18903v2)
 
 The contribution here is the unique transition over the full continuous dilation family and its certified enclosure. The rational-independence assumption applies only to the assertion of lower-endpoint equality and recurring negative values. Priority beyond the sources compared remains open.
 
@@ -63,4 +55,4 @@ python verify.py
 python verify_ramp.py
 ```
 
-The first program uses Arb ball arithmetic on the displayed closed form. The second uses standard-library rational intervals, Machin’s formula, the signed Euler–Maclaurin remainder for Euler’s constant and 78 terms of the unshifted trivial-zero series with a geometric remainder. The calculus proof appears above. [Signed remainder for the digamma expansion](https://dlmf.nist.gov/5.11#ii) · [Verification output](evidence/check.txt) · [File checksums](SHA256SUMS)
+The first program uses Arb ball arithmetic on the displayed closed form. The second uses standard-library rational intervals, Machin's formula, the signed Euler-Maclaurin remainder for Euler's constant and 78 terms of the unshifted trivial-zero series with a geometric remainder. The calculus proof is in [PROOF.md](PROOF.md). [Signed remainder for the digamma expansion](https://dlmf.nist.gov/5.11#ii), [Verification output](evidence/check.txt), [File checksums](SHA256SUMS)
